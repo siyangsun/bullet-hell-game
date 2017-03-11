@@ -1,15 +1,12 @@
 #ifndef MYRECT_H
 #define MYRECT_H
 
-#include <QMainWindow>
+#include <QGraphicsRectItem>
 
-class MyRect : public QMainWindow
-{
-    Q_OBJECT
-
+class MyRect: public QGraphicsRectItem {
 public:
-    MyRect(QWidget *parent = 0);
-    ~MyRect();
+    void keyPressEvent(QKeyEvent * event);
+
 };
 
 #endif // MYRECT_H
