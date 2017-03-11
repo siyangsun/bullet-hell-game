@@ -21,6 +21,8 @@ void MyRect::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_Space) {
         //create a bullet
         Bullet * bullet = new Bullet();
-        qDebug() << "Bullet created";
+        bullet->setPos(x(), y());
+        scene()->addItem(bullet);
+        //qDebug() << "bullet created";
     }
 }
