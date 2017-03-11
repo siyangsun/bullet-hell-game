@@ -24,6 +24,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        myrect.cpp
+        myrect.cpp \
+    bullet.cpp
 
-HEADERS  += myrect.h
+HEADERS  += myrect.h \
+    bullet.h
