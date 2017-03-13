@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     QGraphicsScene * scene = new QGraphicsScene();
 
     // create an item put into the scene that can respond to key events
-    MyRect * player = new MyRect();
+    MyRect *player = new MyRect();
     player->setRect(0, 0, 50, 50);
 
     // add the item to the scene
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     player->setFocus();
 
     // add a view
-    QGraphicsView * view = new QGraphicsView(scene);
+    QGraphicsView *view = new QGraphicsView(scene);
     // can also use view->setScene(scene);
 
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     player->setPos(view->width() / 2 - (player->rect().width() / 2), view->height() - player->rect().height());
 
     //start spawning enemies
-    QTimer * timer = new QTimer();
+    QTimer *timer = new QTimer();
     QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn_melee()));
     timer->start(2000);
 

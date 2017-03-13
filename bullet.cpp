@@ -5,7 +5,7 @@
 Bullet::Bullet()
 {
     setRect(0, 0, 4, 10);
-    QTimer * timer = new QTimer();
+    QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
     timer->start(50);
@@ -14,6 +14,8 @@ Bullet::Bullet()
 
 void Bullet::move()
 {
+
+
     setPos(x(), y() - 20);
     if (pos().y() + rect().height() < 0)
     {

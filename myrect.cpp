@@ -21,8 +21,8 @@ void MyRect::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key() == Qt::Key_Space) {
         //create a bullet
-        Bullet * bullet = new Bullet();
-        bullet->setPos(x() + (rect().width() / 2), y());
+        Bullet *bullet = new Bullet();
+        bullet->setPos(x() + (rect().width() / 2) - (bullet->rect().width() / 2), y());
         scene()->addItem(bullet);
         //qDebug() << "bullet created";
     }
@@ -30,6 +30,6 @@ void MyRect::keyPressEvent(QKeyEvent *event)
 
 void MyRect::spawn_melee()
 {
-    MeleeEnemy * enemy = new MeleeEnemy();
+    MeleeEnemy *enemy = new MeleeEnemy();
     scene()->addItem(enemy);
 }

@@ -5,7 +5,7 @@
 
 MeleeEnemy::MeleeEnemy() : Enemy()
 {
-    QTimer * timer = new QTimer();
+    QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
     timer->start(50);
@@ -18,7 +18,7 @@ MeleeEnemy::MeleeEnemy()
     setPos(random_number, -100);
 
     setRect(0, 0, 50, 50);
-    QTimer * timer = new QTimer();
+    QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
     timer->start(50);
