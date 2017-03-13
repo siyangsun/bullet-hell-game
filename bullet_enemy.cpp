@@ -3,7 +3,7 @@
 
 BulletEnemy::BulletEnemy() : Enemy()
 {
-    setRect(0, 0, 6, 6);
+    setRect(0, 0, 8, 8);
 
     damage_value = 20;
     point_value = 0;
