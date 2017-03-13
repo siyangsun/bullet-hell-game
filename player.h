@@ -11,6 +11,7 @@ public:
     void keyPressEvent(QKeyEvent *event);
 public slots:
     void spawn_melee();
+    void spawn();
 };
 
 #endif // PLAYER_H

@@ -11,8 +11,13 @@ public:
     Enemy();
     int damage_value = 0;
     int point_value = 10;
+    int hitpoints = 1;
+    bool alive = true;
 public slots:
+    void start_moving();
     virtual void move();
+    void check_collisions();
+    virtual void die();
 };
 
 #endif // ENEMY_H

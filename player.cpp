@@ -33,3 +33,8 @@ void Player::spawn_melee()
     MeleeEnemy *enemy = new MeleeEnemy();
     scene()->addItem(enemy);
 }
+
+void Player::spawn()
+{
+    spawn_melee();
+}
