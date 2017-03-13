@@ -28,5 +28,4 @@ void MeleeEnemy::move()
         scene()->removeItem(this);
         delete this;
     }
-
 }

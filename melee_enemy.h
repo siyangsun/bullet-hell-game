@@ -2,7 +2,6 @@
 #define MELEE_ENEMY_H
 
 #include "enemy.h"
-#include <QGraphicsRectItem>
 #include <QObject>
 #include <QTimer>
 
@@ -13,7 +12,7 @@ class MeleeEnemy : public Enemy
 public:
     MeleeEnemy();
 public slots:
-    virtual void move();
+    void move();
 };
 
 #endif // MELEE_ENEMY_H

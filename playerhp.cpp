@@ -12,7 +12,7 @@ PlayerHP::PlayerHP(QGraphicsTextItem *parent) : QGraphicsTextItem(parent)
 //void PlayerHP::take_damage()
 void PlayerHP::take_damage(int damage)
 {
-    hp -= 40;
+    hp -= damage;
     setPlainText("Hitpoints: " + QString::number(hp));
 }
 

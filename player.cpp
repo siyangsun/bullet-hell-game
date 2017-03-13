@@ -4,6 +4,8 @@
 #include <QDebug>
 #include "bullet.h"
 #include "melee_enemy.h"
+#include "bullet_enemy.h"
+#include <stdlib.h>
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
@@ -34,7 +36,21 @@ void Player::spawn_melee()
     scene()->addItem(enemy);
 }
 
+void Player::spawn_bullet()
+{
+    BulletEnemy *enemy = new BulletEnemy();
+    scene()->addItem(enemy);
+}
+
 void Player::spawn()
 {
-    spawn_melee();
+    int random = rand() % 2;
+    if (random == 1)
+    {
+        spawn_melee();
+    }
+    else
+    {
+        spawn_bullet();
+    }
 }

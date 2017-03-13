@@ -35,7 +35,7 @@ Game::Game(QWidget *parent)
 
     //start spawning enemies
     QTimer *timer = new QTimer();
-    QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn_melee()));
+    QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn()));
     timer->start(2000);
 
     show();
