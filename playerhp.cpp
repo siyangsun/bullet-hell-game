@@ -9,8 +9,8 @@ PlayerHP::PlayerHP(QGraphicsTextItem *parent) : QGraphicsTextItem(parent)
     setFont(QFont("helvetica", 14));
 }
 
-//void PlayerHP::take_damage(int enemy_damage)
-void PlayerHP::take_damage()
+//void PlayerHP::take_damage()
+void PlayerHP::take_damage(int damage)
 {
     hp -= 40;
     setPlainText("Hitpoints: " + QString::number(hp));

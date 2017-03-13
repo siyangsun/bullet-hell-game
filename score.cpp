@@ -9,9 +9,9 @@ Score::Score(QGraphicsTextItem *parent) : QGraphicsTextItem(parent)
 }
 
 //void Score::increase(int enemy_score_value)
-void Score::increase()
+void Score::increase(int points)
 {
-    score += 10;
+    score += points;
     setPlainText("Score: " + QString::number(score));
 }
 

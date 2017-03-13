@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "game.h"
 #include <QList>
+#include "bullet.h"
 
 extern Game *game;
 
@@ -13,6 +14,8 @@ MeleeEnemy::MeleeEnemy() : Enemy()
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
     timer->start(50);
+    damage_value = 40;
+    point_value = 10;
 }
 
 
@@ -20,17 +23,28 @@ MeleeEnemy::MeleeEnemy() : Enemy()
 void MeleeEnemy::move()
 {
     QList<QGraphicsItem*> colliding_items = collidingItems();
+    //check for collisions
     for (int i = 0; i < colliding_items.size(); ++i)
     {
-        if (typeid(*(colliding_items[i])) == typeid(Player))
+        if (typeid(*(colliding_items[i])) == typeid(Bullet))
         {
-            game->player_hp->take_damage();
+            game->score->increase(point_value);
+            scene()->removeItem(colliding_items[i]);
+            scene()->removeItem(this);
+            delete colliding_items[i];
+            delete this;
+            return;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Player))
+        {
+            game->player_hp->take_damage(damage_value);
             scene()->removeItem(this);
             delete this;
             return;
         }
     }
-    setPos(x(), y() + 5);
+    int random_number = rand() % 4;
+    setPos(x() + 2 - random_number, y() + 5);
     //Delete it if it goes past the bottom
     if (pos().y() > 600)
     {

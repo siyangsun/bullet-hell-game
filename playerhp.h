@@ -8,8 +8,7 @@ class PlayerHP : public QGraphicsTextItem
 {
 public:
     PlayerHP(QGraphicsTextItem *parent = 0);
-    //void increase(int enemy_score_value);
-    void take_damage();
+    void take_damage(int damage);
     int getHP();
 private:
     int hp;
