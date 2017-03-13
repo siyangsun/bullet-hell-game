@@ -3,21 +3,15 @@
 #include <QGraphicsScene>
 #include <stdlib.h>
 
-//MeleeEnemy::MeleeEnemy() : Enemy() {}
-/*
-MeleeEnemy::MeleeEnemy()
+MeleeEnemy::MeleeEnemy() : Enemy()
 {
-    int random_number = rand() % 700;
-    setPos(random_number, 0);
-
-    setRect(0, 0, 50, 50);
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
     timer->start(50);
 }
-*/
 
+/*
 MeleeEnemy::MeleeEnemy()
 {
     int random_number = rand() % 700;
@@ -29,6 +23,7 @@ MeleeEnemy::MeleeEnemy()
 
     timer->start(50);
 }
+*/
 
 void MeleeEnemy::move()
 {

@@ -7,8 +7,7 @@
 #include <QTimer>
 
 
-//class MeleeEnemy : public Enemy
-class MeleeEnemy : public QObject, public QGraphicsRectItem
+class MeleeEnemy : public Enemy
 {
     Q_OBJECT
 public:
