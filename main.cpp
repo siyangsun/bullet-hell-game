@@ -11,15 +11,15 @@ int main(int argc, char *argv[])
     QGraphicsScene * scene = new QGraphicsScene();
 
     // create an item put into the scene that can respond to key events
-    MyRect * rect = new MyRect();
-    rect->setRect(0,0,50,50);
+    MyRect * player = new MyRect();
+    player->setRect(0, 0, 50, 50);
 
     // add the item to the scene
-    scene->addItem(rect);
+    scene->addItem(player);
 
     // make the rect focusable
-    rect->setFlag(QGraphicsItem::ItemIsFocusable);
-    rect->setFocus();
+    player->setFlag(QGraphicsItem::ItemIsFocusable);
+    player->setFocus();
 
     // add a view
     QGraphicsView * view = new QGraphicsView(scene);
@@ -29,6 +29,10 @@ int main(int argc, char *argv[])
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     view->show();
+    view->setFixedSize(800 ,600);
+    scene->setSceneRect(0, 0, 800, 600);
+
+    player->setPos(view->width() / 2 - (player->rect().width() / 2), view->height() - player->rect().height());
 
     return a.exec();
 }
