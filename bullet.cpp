@@ -3,7 +3,7 @@
 
 Bullet::Bullet()
 {
-    setRect(0, 0, 10, 50);
+    setRect(0, 0, 4, 10);
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
@@ -13,6 +13,6 @@ Bullet::Bullet()
 
 void Bullet::move()
 {
-    setPos(x(), y() - 10);
+    setPos(x(), y() - 20);
 }
 

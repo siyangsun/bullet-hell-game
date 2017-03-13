@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     // create an item put into the scene that can respond to key events
     MyRect * rect = new MyRect();
-    rect->setRect(0,0,100,100);
+    rect->setRect(0,0,50,50);
 
     // add the item to the scene
     scene->addItem(rect);
