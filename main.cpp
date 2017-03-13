@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QGraphicsScene>
-#include "MyRect.h"
+#include "player.h"
 #include "enemy.h"
 #include "melee_enemy.h"
 #include <QGraphicsView>
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     QGraphicsScene * scene = new QGraphicsScene();
 
     // create an item put into the scene that can respond to key events
-    MyRect *player = new MyRect();
+    Player *player = new Player();
     player->setRect(0, 0, 50, 50);
 
     // add the item to the scene

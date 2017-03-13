@@ -1,11 +1,11 @@
-#include "myrect.h"
+#include "player.h"
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include <QDebug>
 #include "bullet.h"
 #include "melee_enemy.h"
 
-void MyRect::keyPressEvent(QKeyEvent *event)
+void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Left) {
         if (pos().x() > 0)
@@ -28,7 +28,7 @@ void MyRect::keyPressEvent(QKeyEvent *event)
     }
 }
 
-void MyRect::spawn_melee()
+void Player::spawn_melee()
 {
     MeleeEnemy *enemy = new MeleeEnemy();
     scene()->addItem(enemy);

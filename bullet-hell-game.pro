@@ -24,12 +24,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        myrect.cpp \
+        player.cpp \
     bullet.cpp \
     enemy.cpp \
-    melee_enemy.cpp
+    melee_enemy.cpp \
+    game.cpp \
+    player.cpp
 
-HEADERS  += myrect.h \
+HEADERS  += player.h \
     bullet.h \
     enemy.h \
-    melee_enemy.h
+    melee_enemy.h \
+    game.h \
+    player.h
