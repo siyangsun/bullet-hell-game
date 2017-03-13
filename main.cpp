@@ -1,6 +1,7 @@
 #include <QApplication>
 #include "game.h"
 
+//declare game as a global object
 Game *game;
 
 int main(int argc, char *argv[])

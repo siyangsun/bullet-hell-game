@@ -10,6 +10,7 @@
 #include <QGraphicsView>
 #include <QTimer>
 #include "score.h"
+#include "playerhp.h"
 
 
 class Game : public QGraphicsWidget
@@ -20,6 +21,7 @@ public:
     QGraphicsScene *scene;
     Player *player;
     Score *score;
+    PlayerHP *player_hp;
 };
 
 #endif // GAME_H

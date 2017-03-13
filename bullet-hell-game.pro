@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     melee_enemy.cpp \
     game.cpp \
     player.cpp \
-    score.cpp
+    score.cpp \
+    playerhp.cpp
 
 HEADERS  += player.h \
     bullet.h \
@@ -38,4 +39,5 @@ HEADERS  += player.h \
     melee_enemy.h \
     game.h \
     player.h \
-    score.h
+    score.h \
+    playerhp.h

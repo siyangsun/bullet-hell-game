@@ -4,6 +4,9 @@
 #include <QList>
 #include "enemy.h"
 #include "melee_enemy.h"
+#include "game.h"
+
+extern Game *game;
 
 Bullet::Bullet()
 {
@@ -22,6 +25,7 @@ void Bullet::move()
     {
         if (typeid(*(colliding_items[i])) == typeid(MeleeEnemy))
         {
+            game->score->increase();
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
             delete colliding_items[i];

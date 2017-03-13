@@ -18,16 +18,20 @@ Game::Game(QWidget *parent)
     scene->setSceneRect(0, 0, 800, 600);
 
     //create the player
-    Player *player = new Player();
+    player = new Player();
     player->setRect(0, 0, 50, 50);
     scene->addItem(player);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
     player->setPos(view->width() / 2 - (player->rect().width() / 2), view->height() - player->rect().height());
 
-    //create score
-    Score *score = new Score();
+    //draw score
+    score = new Score();
     scene->addItem(score);
+    //draw hitpoints
+    player_hp = new PlayerHP();
+    player_hp->setPos(player_hp->x() + 650, player_hp->y());
+    scene->addItem(player_hp);
 
     //start spawning enemies
     QTimer *timer = new QTimer();
