@@ -29,11 +29,13 @@ SOURCES += main.cpp\
     enemy.cpp \
     melee_enemy.cpp \
     game.cpp \
-    player.cpp
+    player.cpp \
+    score.cpp
 
 HEADERS  += player.h \
     bullet.h \
     enemy.h \
     melee_enemy.h \
     game.h \
-    player.h
+    player.h \
+    score.h

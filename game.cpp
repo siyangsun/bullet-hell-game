@@ -1,11 +1,5 @@
 #include "game.h"
-#include <QApplication>
-#include <QGraphicsScene>
-#include "player.h"
-#include "enemy.h"
-#include "melee_enemy.h"
-#include <QGraphicsView>
-#include <QTimer>
+
 
 Game::Game(QWidget *parent)
 {
@@ -31,6 +25,9 @@ Game::Game(QWidget *parent)
     player->setFocus();
     player->setPos(view->width() / 2 - (player->rect().width() / 2), view->height() - player->rect().height());
 
+    //create score
+    Score *score = new Score();
+    scene->addItem(score);
 
     //start spawning enemies
     QTimer *timer = new QTimer();
