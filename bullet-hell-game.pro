@@ -43,3 +43,6 @@ HEADERS  += player.h \
     score.h \
     playerhp.h \
     bullet_enemy.h
+
+RESOURCES += \
+    resources.qrc
