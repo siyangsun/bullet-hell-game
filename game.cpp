@@ -1,4 +1,6 @@
 #include "game.h"
+#include "playerhp.h"
+#include <QDebug>
 
 
 Game::Game(QWidget *parent)
@@ -32,6 +34,8 @@ Game::Game(QWidget *parent)
     player_hp = new PlayerHP();
     player_hp->setPos(player_hp->x() + 650, player_hp->y());
     scene->addItem(player_hp);
+    //connect hp to ending the game
+    connect(player_hp, SIGNAL(dead()), this, SLOT(end()));
 
     //start spawning enemies
     QTimer *timer = new QTimer();
@@ -39,4 +43,21 @@ Game::Game(QWidget *parent)
     timer->start(2000);
 
     show();
+}
+
+Game::~Game()
+{
+    scene = nullptr;
+    player = nullptr;
+    int final_score = score->getScore();
+    score = nullptr;
+    player_hp = nullptr;
+}
+
+void Game::end()
+{
+    qDebug() << "Successfully quit program";
+    //can stop testing health, and can do more extra stuff before exiting
+
+    QApplication::quit();
 }

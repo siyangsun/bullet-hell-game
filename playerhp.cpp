@@ -14,6 +14,10 @@ void PlayerHP::take_damage(int damage)
 {
     hp -= damage;
     setPlainText("Hitpoints: " + QString::number(hp));
+    if (hp <= 0)
+    {
+        emit dead();
+    }
 }
 
 int PlayerHP::getHP()
