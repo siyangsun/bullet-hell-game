@@ -45,6 +45,7 @@ Game::Game(QWidget *parent)
     show();
 }
 
+/*
 Game::~Game()
 {
     scene = nullptr;
@@ -53,10 +54,11 @@ Game::~Game()
     score = nullptr;
     player_hp = nullptr;
 }
+*/
 
 void Game::end()
 {
-    qDebug() << "Successfully quit program";
+    //qDebug() << "Successfully quit program";
     //can stop testing health, and can do more extra stuff before exiting
 
     QApplication::quit();

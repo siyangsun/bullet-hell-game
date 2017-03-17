@@ -18,7 +18,7 @@ class Game : public QGraphicsWidget
     Q_OBJECT
 public:
     Game(QWidget *parent = 0);
-    ~Game();
+    //~Game();
     QGraphicsScene *scene;
     Player *player;
     Score *score;
