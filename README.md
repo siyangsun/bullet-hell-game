@@ -45,6 +45,6 @@ Collisions are checked using the CollidingItems() function.
 This stores all of an *Enemy*'s collisions in a QList container, in which we check each item to see whether or not the colliding item was a bullet. I'd like to implement this in a different way using iterators or generic algorithms next. Another way I would try to spice up my game is to implement an enemy type that requires copy+swap or something.
 
 ### Short Term Bugs
--Money powerup only gives points when shot, not collected- this is because the way I set it up to give points is as an *Enemy* object  
--Bandaid powerup can heal more than full, which doesn't really make sense. Also makes the game pretty easy  
--Weird hitbox on the roadblock sprite  
++ Money powerup only gives points when shot, not collected- this is because the way I set it up to give points is as an *Enemy* object  
++ Bandaid powerup can heal more than full, which doesn't really make sense. Also makes the game pretty easy  
++ Weird hitbox on the roadblock sprite  
