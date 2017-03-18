@@ -30,7 +30,7 @@ Collisions are checked using the CollidingItems() function.
             {
                 die();
             }
-            hitpoints -= 1;
+            --hitpoints;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Player))
         {
