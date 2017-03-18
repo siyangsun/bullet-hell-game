@@ -53,7 +53,7 @@ void Enemy::check_collisions()
             {
                 die();
             }
-            hitpoints -= 1;
+            --hitpoints;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Player))
         {
