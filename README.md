@@ -16,7 +16,7 @@ I also changed the way Enemy object destruction was handled, in order to allow e
 In my game, I cleaned up a lot of the code regarding movement and spawning to look cleaner and make more sense. Currently, I am using random number generators from the standard library to spawn different enemies in a random order. In the future I would want to implement a list with a random access iterator or something to pull out an object for spawning, or something cool like that. I also want the game to scale in difficulty based on score, so I am looking to implement a clever algorithm to handle that using concepts I've learned in class.
 Collisions are checked using the CollidingItems() function. 
 
-`void Enemy::check_collisions()
+```void Enemy::check_collisions()
 {
     QList<QGraphicsItem*> colliding_items = collidingItems();
     //check for collisions
@@ -39,6 +39,6 @@ Collisions are checked using the CollidingItems() function.
             return;
         }
     }
-}`
+}```
 
 This stores all of an Enemy's collisions in a QList container, in which we check each item to see whether or not the colliding item was a bullet. I'd like to implement this in a different way using iterators or generic algorithms next. Another way I would try to spice up my game is to implement an enemy type that requires copy+swap or something.
