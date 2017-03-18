@@ -1,15 +1,17 @@
 #include "game.h"
 #include "playerhp.h"
 #include <QDebug>
+#include <QBrush>
+#include <QImage>
 
 
 Game::Game(QWidget *parent)
 {
     Q_UNUSED(parent);
 
-
     // create a scene
     QGraphicsScene * scene = new QGraphicsScene();
+
     // add a view
     QGraphicsView *view = new QGraphicsView(scene);
     // can also use view->setScene(scene);
@@ -18,6 +20,9 @@ Game::Game(QWidget *parent)
     view->show();
     view->setFixedSize(800 ,600);
     scene->setSceneRect(0, 0, 800, 600);
+
+    //make the background
+    view->setBackgroundBrush(QBrush(QImage(":/sprites/Background.png")));
 
     //create the player
     player = new Player();
