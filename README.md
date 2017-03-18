@@ -14,4 +14,31 @@ Currently, I've implemented several different types of enemies: "melee" enemies 
 I also changed the way Enemy object destruction was handled, in order to allow enemies to take more than one hit of damage by the player. 
 
 In my game, I cleaned up a lot of the code regarding movement and spawning to look cleaner and make more sense. Currently, I am using random number generators from the standard library to spawn different enemies in a random order. In the future I would want to implement a list with a random access iterator or something to pull out an object for spawning, or something cool like that. I also want the game to scale in difficulty based on score, so I am looking to implement a clever algorithm to handle that using concepts I've learned in class.
-Collisions are checked using the CollidingItems() function. It stores all of an Enemy's collisions in a QList container, in which we check each item to see whether or not the colliding item was a bullet. I'd like to implement this in a different way using iterators or generic algorithms next. Another way I would try to spice up my game is to implement an enemy type that requires copy+swap or something.
+Collisions are checked using the CollidingItems() function. 
+
+`void Enemy::check_collisions()
+{
+    QList<QGraphicsItem*> colliding_items = collidingItems();
+    //check for collisions
+    for (int i = 0; i < colliding_items.size(); ++i)
+    {
+        if (typeid(*(colliding_items[i])) == typeid(Bullet))
+        {
+            scene()->removeItem(colliding_items[i]);
+            delete colliding_items[i];
+            if (hitpoints <= 1)
+            {
+                die();
+            }
+            hitpoints -= 1;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Player))
+        {
+            game->player_hp->take_damage(damage_value);
+            alive = false;
+            return;
+        }
+    }
+}`
+
+This stores all of an Enemy's collisions in a QList container, in which we check each item to see whether or not the colliding item was a bullet. I'd like to implement this in a different way using iterators or generic algorithms next. Another way I would try to spice up my game is to implement an enemy type that requires copy+swap or something.
