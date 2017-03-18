@@ -1,17 +1,16 @@
 #include "bullet_enemy.h"
-#include <QGraphicsScene>
 
 BulletEnemy::BulletEnemy() : Enemy()
 {
-    setRect(0, 0, 8, 20);
+    setPixmap(QPixmap(":/sprites/Bullet.png"));
 
-    damage_value = 20;
+    damage_value = 80;
     point_value = 0;
 }
 
 void BulletEnemy::move()
 {
-    setPos(x(), y() + 15);
+    setPos(x(), y() + 30);
     //Delete it if it goes past the bottom
     if (pos().y() > 600)
     {

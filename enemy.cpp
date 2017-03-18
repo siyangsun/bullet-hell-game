@@ -13,8 +13,6 @@ Enemy::Enemy()
     int random_number = rand() % 700;
     setPos(random_number, -100);
 
-    setRect(0, 0, 50, 50);
-
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(start_moving()));
     timer->start(50);

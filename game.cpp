@@ -21,11 +21,11 @@ Game::Game(QWidget *parent)
 
     //create the player
     player = new Player();
-    player->setRect(0, 0, 50, 50);
+    player->setPixmap(QPixmap(":/sprites/Motorcycle_Guy.png"));
     scene->addItem(player);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
-    player->setPos(view->width() / 2 - (player->rect().width() / 2), view->height() - player->rect().height());
+    player->setPos(view->width() / 2 - (player->boundingRect().width() / 2), view->height() - player->boundingRect().height());
 
     //draw score
     score = new Score();

@@ -4,6 +4,11 @@
 #include "enemy.h"
 #include <QObject>
 #include <QTimer>
+#include <stdlib.h>
+#include "game.h"
+#include <QList>
+#include "bullet.h"
+
 
 
 class MeleeEnemy : public Enemy

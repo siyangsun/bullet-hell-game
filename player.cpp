@@ -4,7 +4,10 @@
 #include <QDebug>
 #include "bullet.h"
 #include "melee_enemy.h"
+#include "obstacle.h"
 #include "bullet_enemy.h"
+#include "biker_enemy.h"
+#include "powerup.h"
 #include <stdlib.h>
 #include "game.h"
 
@@ -19,7 +22,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
     }
     else if (event->key() == Qt::Key_Right) {
-        if (pos().x() + rect().width() < 800)
+        if (pos().x() + boundingRect().width() < 800)
         {
             setPos(x()+10,y());
         }
@@ -27,7 +30,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_Space) {
         //create a bullet
         Bullet *bullet = new Bullet();
-        bullet->setPos(x() + (rect().width() / 2) - (bullet->rect().width() / 2), y());
+        bullet->setPos(x() + (boundingRect().width() / 2 + 3), y() - 10);
         scene()->addItem(bullet);
         //qDebug() << "bullet created";
     }
@@ -39,22 +42,38 @@ void Player::spawn_melee()
     scene()->addItem(enemy);
 }
 
-void Player::spawn_bullet()
+void Player::spawn_obstacle()
 {
-    BulletEnemy *enemy = new BulletEnemy();
+    Obstacle *obstacle = new Obstacle();
+    scene()->addItem(obstacle);
+}
+
+void Player::spawn_powerup()
+{
+    PowerUp *powerup = new PowerUp();
+    scene()->addItem(powerup);
+}
+
+void Player::spawn_biker()
+{
+    BikerEnemy *enemy = new BikerEnemy();
     scene()->addItem(enemy);
 }
 
 void Player::spawn()
 {
-    int random = rand() % 2;
-    if (random == 1)
+    int random = rand() % 3;
+    if (random == 0)
     {
-        spawn_melee();
+        spawn_obstacle();
+    }
+    else if (random == 1)
+    {
+        spawn_powerup();
     }
     else
     {
-        spawn_bullet();
+        spawn_biker();
     }
 }
 

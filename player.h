@@ -11,7 +11,9 @@ public:
     void keyPressEvent(QKeyEvent *event);
 public slots:
     void spawn_melee();
-    void spawn_bullet();
+    void spawn_obstacle();
+    void spawn_powerup();
+    void spawn_biker();
     void spawn();
 };
 

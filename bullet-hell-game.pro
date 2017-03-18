@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui \
+         multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -32,17 +33,23 @@ SOURCES += main.cpp\
     player.cpp \
     score.cpp \
     playerhp.cpp \
-    bullet_enemy.cpp
+    bullet_enemy.cpp \
+    biker_enemy.cpp \
+    obstacle.cpp \
+    powerup.cpp
 
 HEADERS  += player.h \
     bullet.h \
     enemy.h \
-    melee_enemy.h \
     game.h \
     player.h \
     score.h \
     playerhp.h \
-    bullet_enemy.h
+    bullet_enemy.h \
+    biker_enemy.h \
+    melee_enemy.h \
+    obstacle.h \
+    powerup.h
 
 RESOURCES += \
     resources.qrc

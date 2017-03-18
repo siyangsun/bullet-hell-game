@@ -20,7 +20,7 @@ Bullet::Bullet()
 
 void Bullet::move()
 {
-    setPos(x(), y() - 20);
+    setPos(x(), y() - 25);
     if (pos().y() + boundingRect().height() < 0)
     {
         scene()->removeItem(this);
