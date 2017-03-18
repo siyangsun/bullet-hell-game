@@ -1,3 +1,6 @@
 <RCC>
-    <qresource prefix="/sprites"/>
+    <qresource prefix="/sprites">
+        <file>Bullet.png</file>
+        <file>Motorcycle_Guy.png</file>
+    </qresource>
 </RCC>
