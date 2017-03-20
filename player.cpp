@@ -63,6 +63,10 @@ void Player::spawn_biker()
 void Player::spawn()
 {
     int random = rand() % 3;
+    //We want to create an array of pointers to member functions, and then call a random index from that array
+    void (Player::*possible_spawns[3])() = {&Player::spawn_obstacle, &Player::spawn_powerup, &Player::spawn_biker};
+    (this->*possible_spawns[random])();
+    /*
     if (random == 0)
     {
         spawn_obstacle();
@@ -75,6 +79,7 @@ void Player::spawn()
     {
         spawn_biker();
     }
+    */
 }
 
 //We can elaborate on this more later, but the idea is to make the game harder based on the difficulty.
