@@ -62,5 +62,5 @@ This stores all of an *Enemy*'s collisions in a QList container, in which we che
 ### Future Changes
 + Find a cooler way of checking collisions
 + More kinds of enemies and powerups
-+ Rebuild the game to be horizontally scrolling instead
++ Rebuild the game to be horizontally oriented instead
 + Make the background a gif or video to make it look like the player is moving
