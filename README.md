@@ -56,3 +56,9 @@ This stores all of an *Enemy*'s collisions in a QList container, in which we che
 + Money powerup only gives points when shot, not collected- this is because the way I set it up to give points is as an *Enemy* object  
 + Bandaid powerup can heal more than full, which doesn't really make sense. Also makes the game pretty easy  
 + Weird hitbox on the roadblock sprite  
+
+### Future Changes
++ Find a cooler way of checking collisions
++ More kinds of enemies and powerups
++ Rebuild the game to be horizontally scrolling instead
++ Make the background a gif or video to make it look like the player is moving
