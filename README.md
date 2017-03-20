@@ -13,7 +13,15 @@ Using the tutorial above, I created classes for the *Game*, *Player*, *Bullet*, 
 Currently, I've implemented several different types of enemies: "melee" enemies which cause collision damage, "shooting" enemies which fire projectiles, and "projectile" enemies which are essentially melee enemies that are launched by the shooting enemies. Within the *MeleeEnemy* class there are *Obstacles*, which do not move; I implemented powerups using this as well, which use the built-in private members of the *Enemy* class to increase player score or heal the player by doing negative damage. 
 I also changed the way *Enemy* object destruction was handled, in order to allow enemies to take more than one hit of damage by the player. 
 
-In my game, I cleaned up a lot of the code regarding movement and spawning to look cleaner and make more sense. Currently, I am using random number generators from the standard library to spawn different enemies in a random order. In the future I would want to implement a list with a random access iterator or something to pull out an object for spawning, or something cool like that. I also want the game to scale in difficulty based on score, so I am looking to implement a clever algorithm to handle that using concepts I've learned in class.
+In my game, I cleaned up a lot of the code regarding movement and spawning to look cleaner and make more sense. Currently, I am using random number generators from the standard library to spawn different enemies in a random order. Initially, I was using a bunch of if statements to handle this; however, I decided to implement an array of function pointers, which I learned about in class:
+```    
+int random = rand() % 3;
+//We want to create an array of pointers to member functions, and then call a random index from that array
+void (Player::*possible_spawns[3])() = {&Player::spawn_obstacle, &Player::spawn_powerup, &Player::spawn_biker};
+(this->*possible_spawns[random])();
+```
+
+
 Collisions are checked using the CollidingItems() function. 
 
 ```void Enemy::check_collisions()
