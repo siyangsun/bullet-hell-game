@@ -64,3 +64,4 @@ This stores all of an *Enemy*'s collisions in a QList container, in which we che
 + More kinds of enemies and powerups
 + Rebuild the game to be horizontally oriented instead
 + Make the background a gif or video to make it look like the player is moving
++ Have a menu before and after the game to navigate, give instructions, and allow the player to change certain options
