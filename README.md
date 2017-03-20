@@ -22,7 +22,7 @@ void (Player::*possible_spawns[3])() = {&Player::spawn_obstacle, &Player::spawn_
 ```
 
 
-Collisions between enemies and other objects are checked using the CollidingItems() member function. 
+Collisions between enemies and other objects are checked in the CollidingItems() member function. 
 
 ```void Enemy::check_collisions()
 {
