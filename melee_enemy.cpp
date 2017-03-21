@@ -13,9 +13,9 @@ MeleeEnemy::MeleeEnemy() : Enemy()
 
 void MeleeEnemy::move()
 {
-    setPos(x(), y() + 10);
+    setPos(x() - 10, y());
     //Delete it if it goes past the bottom
-    if (pos().y() > 600)
+    if (pos().x() < 0)
     {
         scene()->removeItem(this);
         delete this;

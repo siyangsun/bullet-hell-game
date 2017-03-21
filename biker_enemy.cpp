@@ -20,9 +20,9 @@ BikerEnemy::BikerEnemy() : Enemy()
 
 void BikerEnemy::move()
 {
-    setPos(x(), y() + 18);
+    setPos(x() - 18, y());
     //Delete it if it goes past the bottom
-    if (pos().y() > 600)
+    if (pos().x() < 0)
     {
         scene()->removeItem(this);
         delete this;

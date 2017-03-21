@@ -10,8 +10,8 @@ extern Game *game;
 Enemy::Enemy()
 {
     //set random spawn location
-    int random_number = rand() % 700;
-    setPos(random_number, -100);
+    int random_number = rand() % 550;
+    setPos(900, random_number);
 
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(start_moving()));

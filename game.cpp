@@ -30,7 +30,7 @@ Game::Game(QWidget *parent)
     scene->addItem(player);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
-    player->setPos(view->width() / 2 - (player->boundingRect().width() / 2), view->height() - player->boundingRect().height());
+    player->setPos(0, (view->height() - player->boundingRect().height()) / 2);
 
     //draw score
     score = new Score();
