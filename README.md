@@ -55,13 +55,13 @@ Collisions between enemies and other objects are checked in the CollidingItems()
 This stores all of an *Enemy*'s collisions in a QList container, in which we check each item to see whether or not the colliding item was a bullet. I'd like to implement this in a different way using iterators or generic algorithms next. Another way I would try to spice up my game is to implement an enemy type that requires copy+swap or something.
 
 ### Short Term Bugs
-+ Money powerup only gives points when shot, not collected- this is because the way I set it up to give points is as an *Enemy* object  
++ Money powerup only gives points when shot, not collected- this is because the way I set it up to give points is as an *Enemy* object. Note: I thought about using the built in hitpoints member of the *Enemy* class to make it less likely to be destroyed, but then they would still block and destroy *Bullet* objects. This can all be fixed by making the check_collisions() function virtual for the *Enemy* class, and then redefine it to ignore bullets for just the *PowerUP* class.
 + Bandaid powerup can heal more than full, which doesn't really make sense. Also makes the game pretty easy  
 + Weird hitbox on the roadblock sprite  
 
 ### Future Changes
 + Find a cooler way of checking collisions
 + More kinds of enemies and powerups
-+ Rebuild the game to be horizontally oriented instead
++ Rebuild the game to be horizontally oriented instead (have to change sprites too)
 + Make the background a gif or video to make it look like the player is moving
 + Have a menu before and after the game to navigate, give instructions, and allow the player to change certain options
