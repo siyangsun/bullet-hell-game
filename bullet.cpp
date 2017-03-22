@@ -10,7 +10,7 @@ extern Game *game;
 
 Bullet::Bullet()
 {
-    setPixmap(QPixmap(":/sprites/Bullet.png"));
+    setPixmap(QPixmap(":/sprites/bullet_horizontal.png"));
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 

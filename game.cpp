@@ -26,7 +26,7 @@ Game::Game(QWidget *parent)
 
     //create the player
     player = new Player();
-    player->setPixmap(QPixmap(":/sprites/Motorcycle_Guy.png"));
+    player->setPixmap(QPixmap(":/sprites/motorcycle_guy2.png"));
     scene->addItem(player);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();

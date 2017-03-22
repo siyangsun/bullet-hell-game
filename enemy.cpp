@@ -28,6 +28,12 @@ void Enemy::start_moving()
         delete this;
         return;
     }
+    //Delete it if it goes past the edge
+    else if (pos().x() < 0 - boundingRect().width())
+    {
+        scene()->removeItem(this);
+        delete this;
+    }
     else
     {
         move();
