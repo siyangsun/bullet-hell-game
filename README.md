@@ -1,6 +1,6 @@
 # bullet-hell-game
 
-Here's what the game is supposed to look like:
+Here's what the game looks like, if run correctly:
 ![Screenshot of the menu](https://cloud.githubusercontent.com/assets/13752232/24381966/313d1f14-1308-11e7-8d35-8b0c3f20fa1c.png)
 
 
