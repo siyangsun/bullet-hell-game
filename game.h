@@ -11,6 +11,7 @@
 #include <QTimer>
 #include "score.h"
 #include "playerhp.h"
+#include "menu.h"
 
 
 class Game : public QGraphicsWidget
@@ -23,8 +24,12 @@ public:
     Player *player;
     Score *score;
     PlayerHP *player_hp;
+    Menu *menu;
 public slots:
+    void start();
     void end();
+private:
+    bool started = 0;
 };
 
 #endif // GAME_H

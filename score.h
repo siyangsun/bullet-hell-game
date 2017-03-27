@@ -3,6 +3,7 @@
 
 #include <QGraphicsTextItem>
 #include <QFont>
+#include <QColor>
 
 class Score : public QGraphicsTextItem
 {

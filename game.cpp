@@ -1,5 +1,4 @@
 #include "game.h"
-#include "playerhp.h"
 #include <QDebug>
 #include <QBrush>
 #include <QImage>
@@ -10,7 +9,7 @@ Game::Game(QWidget *parent)
     Q_UNUSED(parent);
 
     // create a scene
-    QGraphicsScene * scene = new QGraphicsScene();
+    QGraphicsScene *scene = new QGraphicsScene();
 
     // add a view
     QGraphicsView *view = new QGraphicsView(scene);
@@ -22,7 +21,7 @@ Game::Game(QWidget *parent)
     scene->setSceneRect(0, 0, 800, 600);
 
     //make the background
-    view->setBackgroundBrush(QBrush(QImage(":/sprites/Background.png")));
+    view->setBackgroundBrush(QBrush(QImage(":/sprites/menu.png")));
 
     //create the player
     player = new Player();
@@ -31,6 +30,8 @@ Game::Game(QWidget *parent)
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
     player->setPos(0, (view->height() - player->boundingRect().height()) / 2);
+
+    connect(player, SIGNAL(quit_menu()), this, SLOT(start()));
 
     //draw score
     score = new Score();
@@ -50,6 +51,17 @@ Game::Game(QWidget *parent)
     show();
 }
 
+void Game::start()
+{
+    if (!started)
+    {
+        qDebug() << "Successfully hid menu";
+    }
+    qDebug() << "Successfully received signal";
+    started = true;
+}
+
+
 /*
 Game::~Game()
 {
@@ -65,6 +77,6 @@ void Game::end()
 {
     //qDebug() << "Successfully quit program";
     //can stop testing health, and can do more extra stuff before exiting
-
+    started = false;
     QApplication::quit();
 }

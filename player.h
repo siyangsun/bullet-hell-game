@@ -15,6 +15,8 @@ public slots:
     void spawn_powerup();
     void spawn_biker();
     void spawn();
+signals:
+    void quit_menu();
 };
 
 #endif // PLAYER_H

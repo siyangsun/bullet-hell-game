@@ -36,7 +36,8 @@ SOURCES += main.cpp\
     bullet_enemy.cpp \
     biker_enemy.cpp \
     obstacle.cpp \
-    powerup.cpp
+    powerup.cpp \
+    menu.cpp
 
 HEADERS  += player.h \
     bullet.h \
@@ -49,7 +50,8 @@ HEADERS  += player.h \
     biker_enemy.h \
     melee_enemy.h \
     obstacle.h \
-    powerup.h
+    powerup.h \
+    menu.h
 
 RESOURCES += \
     resources.qrc
