@@ -15,22 +15,22 @@ extern Game *game;
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Left) {
-        if (pos().x() > 0)
+    if (event->key() == Qt::Key_Up) {
+        if (pos().y() > 0)
         {
-            setPos(x()-10,y());
+            setPos(x(),y() - 10);
         }
     }
-    else if (event->key() == Qt::Key_Right) {
-        if (pos().x() + boundingRect().width() < 800)
+    else if (event->key() == Qt::Key_Down) {
+        if (pos().y() + boundingRect().height() < 600)
         {
-            setPos(x()+10,y());
+            setPos(x(),y() + 10);
         }
     }
     else if (event->key() == Qt::Key_Space) {
         //create a bullet
         Bullet *bullet = new Bullet();
-        bullet->setPos(x() + (boundingRect().width() / 2 + 3), y() - 10);
+        bullet->setPos(x() + boundingRect().width(), y() + 9);
         scene()->addItem(bullet);
         //qDebug() << "bullet created";
     }
@@ -66,20 +66,6 @@ void Player::spawn()
     //We want to create an array of pointers to member functions, and then call a random index from that array
     void (Player::*possible_spawns[3])() = {&Player::spawn_obstacle, &Player::spawn_powerup, &Player::spawn_biker};
     (this->*possible_spawns[random])();
-    /*
-    if (random == 0)
-    {
-        spawn_obstacle();
-    }
-    else if (random == 1)
-    {
-        spawn_powerup();
-    }
-    else
-    {
-        spawn_biker();
-    }
-    */
 }
 
 //We can elaborate on this more later, but the idea is to make the game harder based on the difficulty.

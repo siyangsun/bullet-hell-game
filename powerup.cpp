@@ -12,13 +12,13 @@ PowerUp::PowerUp()
     if (random_number == 0)
     {
         setPixmap(QPixmap(":/sprites/Bandaid.png"));
-        damage_value = -50;
+        damage_value = -25;
         point_value = 0;
     }
     else if (random_number == 1)
     {
         setPixmap(QPixmap(":/sprites/Money.png"));
         damage_value = 0;
-        point_value = 100;
+        point_value = 50;
     }
 }

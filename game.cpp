@@ -1,5 +1,4 @@
 #include "game.h"
-#include "playerhp.h"
 #include <QDebug>
 #include <QBrush>
 #include <QImage>
@@ -10,7 +9,7 @@ Game::Game(QWidget *parent)
     Q_UNUSED(parent);
 
     // create a scene
-    QGraphicsScene * scene = new QGraphicsScene();
+    QGraphicsScene *scene = new QGraphicsScene();
 
     // add a view
     QGraphicsView *view = new QGraphicsView(scene);
@@ -26,11 +25,11 @@ Game::Game(QWidget *parent)
 
     //create the player
     player = new Player();
-    player->setPixmap(QPixmap(":/sprites/Motorcycle_Guy.png"));
+    player->setPixmap(QPixmap(":/sprites/motorcycle_guy2.png"));
     scene->addItem(player);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
-    player->setPos(view->width() / 2 - (player->boundingRect().width() / 2), view->height() - player->boundingRect().height());
+    player->setPos(0, (view->height() - player->boundingRect().height()) / 2);
 
     //draw score
     score = new Score();
@@ -42,10 +41,14 @@ Game::Game(QWidget *parent)
     //connect hp to ending the game
     connect(player_hp, SIGNAL(dead()), this, SLOT(end()));
 
+    //draw the menu
+    menu = new Menu();
+    scene->addItem(menu);
+
     //start spawning enemies
     QTimer *timer = new QTimer();
     QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn()));
-    timer->start(2000);
+    timer->start(1000);
 
     show();
 }
@@ -65,6 +68,6 @@ void Game::end()
 {
     //qDebug() << "Successfully quit program";
     //can stop testing health, and can do more extra stuff before exiting
-
+    started = false;
     QApplication::quit();
 }

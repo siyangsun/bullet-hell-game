@@ -4,7 +4,7 @@ Score::Score(QGraphicsTextItem *parent) : QGraphicsTextItem(parent)
 {
     score = 0;
     setPlainText("Score: " + QString::number(score));
-    setDefaultTextColor(Qt::red);
+    setDefaultTextColor(QColor(255,140,0));
     setFont(QFont("helvetica", 14));
 }
 

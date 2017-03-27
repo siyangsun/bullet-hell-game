@@ -1,13 +1,15 @@
 <RCC>
     <qresource prefix="/sprites">
         <file>Bullet.png</file>
-        <file>Boxes.png</file>
-        <file>Motorcycle_Guy.png</file>
-        <file>Motorcycle_Enemy.png</file>
-        <file>Motorcycle_Knife_Enemy.png</file>
-        <file>Roadblock1.png</file>
         <file>Bandaid.png</file>
         <file>Money.png</file>
         <file>Background.png</file>
+        <file>boxes2.png</file>
+        <file>bullet_horizontal.png</file>
+        <file>motorcycle_enemy2.png</file>
+        <file>motorcycle_guy2.png</file>
+        <file>motorcycle_knife_enemy2.png</file>
+        <file>trash_can.png</file>
+        <file>menu.png</file>
     </qresource>
 </RCC>
