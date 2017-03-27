@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/sprites">
-        <file>Bullet.png</file>
         <file>Bandaid.png</file>
         <file>Money.png</file>
         <file>Background.png</file>
