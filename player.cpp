@@ -34,10 +34,6 @@ void Player::keyPressEvent(QKeyEvent *event)
         scene()->addItem(bullet);
         //qDebug() << "bullet created";
     }
-    else if (event->key() == Qt::Key_Return) {
-        qDebug() << "Successfully exited the menu";
-        emit quit_menu();
-    }
 }
 
 void Player::spawn_melee()

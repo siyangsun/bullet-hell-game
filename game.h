@@ -26,7 +26,6 @@ public:
     PlayerHP *player_hp;
     Menu *menu;
 public slots:
-    void start();
     void end();
 private:
     bool started = 0;

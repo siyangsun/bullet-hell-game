@@ -4,12 +4,7 @@ extern Game *game;
 
 MeleeEnemy::MeleeEnemy() : Enemy()
 {
-
-
-
 }
-
-
 
 void MeleeEnemy::move()
 {

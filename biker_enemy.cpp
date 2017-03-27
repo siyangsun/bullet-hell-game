@@ -1,4 +1,5 @@
 #include "biker_enemy.h"
+#include <stdlib.h>
 
 
 BikerEnemy::BikerEnemy() : Enemy()
@@ -19,6 +20,8 @@ BikerEnemy::BikerEnemy() : Enemy()
 }
 
 void BikerEnemy::move()
+//the biker enemies move semi-randomly
 {
-    setPos(x() - 18, y());
+    int random_number = rand() % 6;
+    setPos(x() - 18, y() + 3 - random_number);
 }

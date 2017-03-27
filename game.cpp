@@ -31,8 +31,6 @@ Game::Game(QWidget *parent)
     player->setFocus();
     player->setPos(0, (view->height() - player->boundingRect().height()) / 2);
 
-    connect(player, SIGNAL(quit_menu()), this, SLOT(start()));
-
     //draw score
     score = new Score();
     scene->addItem(score);
@@ -54,17 +52,6 @@ Game::Game(QWidget *parent)
 
     show();
 }
-
-void Game::start()
-{
-    if (!started)
-    {
-        qDebug() << "Successfully hid menu";
-    }
-    qDebug() << "Successfully received signal";
-    started = true;
-}
-
 
 /*
 Game::~Game()
