@@ -1,16 +1,13 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include <QGraphicsWidget>
-#include <QGraphicsScene>
-#include <QGraphicsView>
+#include "enemy.h"
 
-class Menu : public QGraphicsWidget
+class Menu : public Enemy
 {
     Q_OBJECT
 public:
-    Menu(QWidget *parent = 0);
-    void keyPressEvent(QKeyEvent *event);
+    Menu();
 };
 
 #endif // MENU_H

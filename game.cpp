@@ -21,7 +21,7 @@ Game::Game(QWidget *parent)
     scene->setSceneRect(0, 0, 800, 600);
 
     //make the background
-    view->setBackgroundBrush(QBrush(QImage(":/sprites/menu.png")));
+    view->setBackgroundBrush(QBrush(QImage(":/sprites/Background.png")));
 
     //create the player
     player = new Player();
@@ -42,6 +42,10 @@ Game::Game(QWidget *parent)
     scene->addItem(player_hp);
     //connect hp to ending the game
     connect(player_hp, SIGNAL(dead()), this, SLOT(end()));
+
+    //draw the menu
+    menu = new Menu();
+    scene->addItem(menu);
 
     //start spawning enemies
     QTimer *timer = new QTimer();

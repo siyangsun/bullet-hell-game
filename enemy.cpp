@@ -67,6 +67,11 @@ void Enemy::check_collisions()
             alive = false;
             return;
         }
+        else if (typeid(*(colliding_items[i])) == typeid(Menu))
+        {
+            alive = false;
+            return;
+        }
     }
 }
 
