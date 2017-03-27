@@ -1,14 +1,14 @@
 # bullet-hell-game
 Project for PIC 10C at UCLA
 
-I've been following this guide: https://www.youtube.com/watch?v=8ntEQpg7gck&t=1s
-However, once I get comfortable with the mechanics of the game and with using QT for the project, I will branch off and add my own features to it.
+
+
 
 ### Instructions
 To be safe, cleaning the solution and running qmake before running will prevent errors in the .obj files. Once run, move using the left and right arrow keys, and shoot using space. Avoid getting hit by enemies or obstacles by either dodging or shooting them. You can pick up powerups like bandaids or money to heal or increase your score.
 
 ### Process
-Using the tutorial above, I created classes for the *Game*, *Player*, *Bullet*, *Enemy*, *Health*, and *Score* (though my own implementation is a little different). *Game* is a QGraphicsWidget that contains all the other objects, and handles playing the game.
+With some help from this tutorial: https://www.youtube.com/watch?v=8ntEQpg7gck&t=1s, I created classes for the *Game*, *Player*, *Bullet*, *Enemy*, *Health*, and *Score* (though my own implementation is a little different). *Game* is a QGraphicsWidget that contains all the other objects, and handles playing the game.
 *Player*, *Bullet*, and *Enemy* are QGraphicsPixmapItem objects, each with their own distinct members. *Player* can accept keypress inputs, while *Bullet* and *Enemy* have their own movement functions. I also referenced the tutorial on how to handle collisions, for the most part- however, I decided to check collisions in the *Enemy* class instead of in the *Bullet* class (how the tutorial did it), since I had other plans for how to handle destroying the objects. I used my previous knowledge of signals and slots to do this. I also had to change the way the *Enemy* class was set up in order to avoid memory leaks. I made the move() function in the *Enemy* class virtual, so that its derived classes can define their own movement pattern.
 *Health* (which I have named *PlayerHP*) and *Score* are fairly simple QGraphicsTextItem objects that I implemented with the help of the video tutorial. I also referenced the tutorial video series as well as the qt documentation to add resource files into my game.
 
@@ -57,11 +57,9 @@ This stores all of an *Enemy*'s collisions in a QList container, in which we che
 ### Short Term Bugs
 + Money powerup only gives points when shot, not collected- this is because the way I set it up to give points is as an *Enemy* object. I thought about using the built in hitpoints member of the *Enemy* class to make it less likely to be destroyed, but then they would still block and destroy *Bullet* objects. This can all be fixed by making the check_collisions() function virtual for the *Enemy* class, and then redefine it to ignore bullets for just the *PowerUP* class.
 + Bandaid powerup can heal more than full, which doesn't really make sense. Also makes the game pretty easy  
-+ Weird hitbox on the roadblock sprite  
 
 ### Future Changes
 + Find a cooler way of checking collisions
 + More kinds of enemies and powerups
-+ Rebuild the game to be horizontally oriented instead (have to change sprites too)
 + Make the background a gif or video to make it look like the player is moving
-+ Have a menu before and after the game to navigate, give instructions, and allow the player to change certain options
++ Give the menu more functionality, rather than just showing instructions
