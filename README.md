@@ -1,7 +1,7 @@
 # bullet-hell-game
-Project for PIC 10C at UCLA
 
-
+Here's what the game is supposed to look like:
+![Screenshot of the menu](https://cloud.githubusercontent.com/assets/13752232/24381966/313d1f14-1308-11e7-8d35-8b0c3f20fa1c.png)
 
 
 ### Instructions
