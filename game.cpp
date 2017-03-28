@@ -71,7 +71,7 @@ void Game::end()
 {
     //qDebug() << "Successfully quit program";
     //can stop testing health, and can do more extra stuff before exiting
-    int& last_game_score = score->score;
+    //int& last_game_score = score->score;
     menu = new Menu();
     scene->addItem(menu);
     score->score = 0;
@@ -79,6 +79,6 @@ void Game::end()
     //update score and hp
     score->increase(0);
     player_hp->take_damage(0);
-    //menu->setPixmap(QPixmap(":/sprites/bandaid.png"));
+    menu->setPixmap(QPixmap(":/sprites/menu2.png"));
 
 }

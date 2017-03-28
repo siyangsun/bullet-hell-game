@@ -8,13 +8,13 @@ BikerEnemy::BikerEnemy() : Enemy()
     if (random_number == 0)
     {
         setPixmap(QPixmap(":/sprites/motorcycle_enemy2.png"));
-        damage_value = 30;
+        damage_value = 40;
         point_value = 50;
     }
     else if (random_number == 1)
     {
         setPixmap(QPixmap(":/sprites/motorcycle_knife_enemy2.png"));
-        damage_value = 45;
+        damage_value = 65;
         point_value = 70;
     }
 }
