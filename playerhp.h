@@ -10,11 +10,9 @@ class PlayerHP : public QGraphicsTextItem
 public:
     PlayerHP(QGraphicsTextItem *parent = 0);
     void take_damage(int damage);
-    int getHP();
-signals:
-    void dead();
-private:
     int hp;
+signals:
+    void dead();  
 };
 
 #endif // PLAYERHP_H

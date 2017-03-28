@@ -11,8 +11,6 @@ public:
     Score(QGraphicsTextItem *parent = 0);
     //void increase(int enemy_score_value);
     void increase(int points);
-    int getScore();
-private:
     int score;
 };
 

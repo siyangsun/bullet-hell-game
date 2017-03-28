@@ -75,6 +75,6 @@ void Player::spawn()
 //Might be better if difficulty is an int from 1 to 5 or something. We can also give the player
 //more ways to fight enemies.
 double difficulty() {
-    double difficulty = game->score->getScore() / 100;
+    double difficulty = game->score->score / 100;
     return difficulty;
 }

@@ -14,8 +14,3 @@ void Score::increase(int points)
     score += points;
     setPlainText("Score: " + QString::number(score));
 }
-
-int Score::getScore()
-{
-    return score;
-}

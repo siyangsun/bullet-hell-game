@@ -19,8 +19,3 @@ void PlayerHP::take_damage(int damage)
         emit dead();
     }
 }
-
-int PlayerHP::getHP()
-{
-    return hp;
-}

@@ -3,16 +3,19 @@
 #include <QBrush>
 #include <QImage>
 
+QGraphicsScene *scene;
+QGraphicsView *view;
+
 
 Game::Game(QWidget *parent)
 {
     Q_UNUSED(parent);
 
     // create a scene
-    QGraphicsScene *scene = new QGraphicsScene();
+    scene = new QGraphicsScene();
 
     // add a view
-    QGraphicsView *view = new QGraphicsView(scene);
+    view = new QGraphicsView(scene);
     // can also use view->setScene(scene);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -68,5 +71,14 @@ void Game::end()
 {
     //qDebug() << "Successfully quit program";
     //can stop testing health, and can do more extra stuff before exiting
-    QApplication::quit();
+    int& last_game_score = score->score;
+    menu = new Menu();
+    scene->addItem(menu);
+    score->score = 0;
+    player_hp->hp = 100;
+    //update score and hp
+    score->increase(0);
+    player_hp->take_damage(0);
+    //menu->setPixmap(QPixmap(":/sprites/bandaid.png"));
+
 }
