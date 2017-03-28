@@ -56,7 +56,8 @@ This stores all of an *Enemy*'s collisions in a QList container, in which we che
 
 ### Short Term Bugs
 + Money powerup only gives points when shot, not collected- this is because the way I set it up to give points is as an *Enemy* object. I thought about using the built in hitpoints member of the *Enemy* class to make it less likely to be destroyed, but then they would still block and destroy *Bullet* objects. This can all be fixed by making the check_collisions() function virtual for the *Enemy* class, and then redefine it to ignore bullets for just the *PowerUP* class.
-+ Bandaid powerup can heal more than full, which doesn't really make sense. Also makes the game pretty easy  
++ Bandaid powerup can heal more than full, which doesn't really make sense. Also makes the game pretty easy
++ If you click the background it "unfocuses" the *Player* object, which makes it so you have to click the player again to be able to enter key inputs.
 
 ### Future Changes
 + Find a cooler way of checking collisions
