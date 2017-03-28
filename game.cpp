@@ -56,17 +56,6 @@ Game::Game(QWidget *parent)
     show();
 }
 
-/*
-Game::~Game()
-{
-    scene = nullptr;
-    player = nullptr;
-    int final_score = score->getScore();
-    score = nullptr;
-    player_hp = nullptr;
-}
-*/
-
 void Game::end()
 {
     //qDebug() << "Successfully quit program";

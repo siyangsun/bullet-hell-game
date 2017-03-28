@@ -2,13 +2,14 @@
     <qresource prefix="/sprites">
         <file>Bandaid.png</file>
         <file>Money.png</file>
-        <file>Background.png</file>
         <file>boxes2.png</file>
         <file>bullet_horizontal.png</file>
         <file>motorcycle_enemy2.png</file>
         <file>motorcycle_guy2.png</file>
         <file>motorcycle_knife_enemy2.png</file>
         <file>trash_can.png</file>
+        <file>Background.png</file>
+        <file>Building.png</file>
         <file>menu.png</file>
         <file>menu2.png</file>
     </qresource>
