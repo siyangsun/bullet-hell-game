@@ -68,6 +68,5 @@ void Game::end()
 {
     //qDebug() << "Successfully quit program";
     //can stop testing health, and can do more extra stuff before exiting
-    started = false;
     QApplication::quit();
 }

@@ -27,8 +27,6 @@ public:
     Menu *menu;
 public slots:
     void end();
-private:
-    bool started = 0;
 };
 
 #endif // GAME_H
